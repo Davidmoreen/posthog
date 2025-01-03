@@ -14,6 +14,8 @@ from ..session_recordings.models.session_recording_playlist_item import (
 from ..warehouse.models import DataWarehouseTable
 from ._deprecated_prompts import Prompt, PromptSequence, UserPromptState
 from .action import Action
+from .crm import CrmObject
+from .crm import CrmObjectType
 from .action.action_step import ActionStep
 from .activity_logging.activity_log import ActivityLog
 from .activity_logging.notification_viewed import NotificationViewed
@@ -100,6 +102,8 @@ __all__ = [
     "BatchExportRun",
     "Cohort",
     "CohortPeople",
+    "CrmObject",
+    "CrmObjectType",
     "Dashboard",
     "DashboardTile",
     "DashboardTemplate",

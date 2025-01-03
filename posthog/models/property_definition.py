@@ -3,6 +3,7 @@ from django.db import models
 from django.db.models.expressions import F
 from django.db.models.functions import Coalesce
 
+from posthog.models.crm import CrmObjectType
 from posthog.models.team import Team
 from posthog.models.utils import UniqueConstraintByExpression, UUIDModel
 
@@ -36,6 +37,7 @@ class PropertyDefinition(UUIDModel):
         PERSON = 2, "person"
         GROUP = 3, "group"
         SESSION = 4, "session"
+        OBJECT = 5, "object"
 
     team = models.ForeignKey(
         Team,
@@ -55,6 +57,9 @@ class PropertyDefinition(UUIDModel):
     type = models.PositiveSmallIntegerField(default=Type.EVENT, choices=Type.choices)
     # Only populated for `Type.GROUP`
     group_type_index = models.PositiveSmallIntegerField(null=True)
+
+    # Only populated for `Type.OBJECT`
+    object_type = models.ForeignKey(CrmObjectType, on_delete=models.SET_NULL, null=True)
 
     # DEPRECATED
     property_type_format = models.CharField(
