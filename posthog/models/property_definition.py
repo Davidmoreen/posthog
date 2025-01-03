@@ -59,7 +59,7 @@ class PropertyDefinition(UUIDModel):
     group_type_index = models.PositiveSmallIntegerField(null=True)
 
     # Only populated for `Type.OBJECT`
-    object_type = models.ForeignKey(CrmObjectType, on_delete=models.SET_NULL, null=True)
+    object_type = models.ForeignKey(CrmObjectType, on_delete=models.SET_NULL, blank=True, null=True)
 
     # DEPRECATED
     property_type_format = models.CharField(

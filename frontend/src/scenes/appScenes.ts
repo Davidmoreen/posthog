@@ -41,6 +41,7 @@ export const appScenes: Record<Scene, () => any> = {
     [Scene.ErrorTrackingIssue]: () => import('./error-tracking/ErrorTrackingIssueScene'),
     [Scene.Surveys]: () => import('./surveys/Surveys'),
     [Scene.Survey]: () => import('./surveys/Survey'),
+    [Scene.Forms]: () => import('./forms/Forms'),
     [Scene.CustomCss]: () => import('./themes/CustomCssScene'),
     [Scene.SurveyTemplates]: () => import('./surveys/SurveyTemplates'),
     [Scene.DataWarehouse]: () => import('./data-warehouse/external/DataWarehouseExternalScene'),

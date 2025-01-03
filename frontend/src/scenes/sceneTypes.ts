@@ -46,6 +46,7 @@ export enum Scene {
     EarlyAccessFeature = 'EarlyAccessFeature',
     Surveys = 'Surveys',
     Survey = 'Survey',
+    Forms = 'Forms',
     SurveyTemplates = 'SurveyTemplates',
     DataWarehouse = 'DataWarehouse',
     SQLEditor = 'SQLEditor',

@@ -502,6 +502,12 @@ export const navigation3000Logic = kea<navigation3000LogicType>([
                             to: isUsingSidebar ? undefined : urls.experiments(),
                         },
                         {
+                            identifier: Scene.Forms,
+                            label: 'Waitlists',
+                            icon: <IconMegaphone />,
+                            to: urls.forms(),
+                        },
+                        {
                             identifier: Scene.Surveys,
                             label: 'Surveys',
                             icon: <IconMessage />,

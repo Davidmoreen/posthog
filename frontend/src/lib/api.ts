@@ -57,6 +57,7 @@ import {
     FeatureFlagAssociatedRoleType,
     FeatureFlagStatusResponse,
     FeatureFlagType,
+    Form,
     Group,
     GroupListParams,
     HogFunctionIconResponse,
@@ -696,6 +697,11 @@ class ApiRequest {
 
     public earlyAccessFeature(id: EarlyAccessFeatureType['id'], teamId?: TeamType['id']): ApiRequest {
         return this.earlyAccessFeatures(teamId).addPathComponent(id)
+    }
+
+    // # Forms
+    public forms(teamId?: TeamType['id']): ApiRequest {
+        return this.projectsDetail(teamId).addPathComponent('forms')
     }
 
     // # Surveys
@@ -2200,6 +2206,12 @@ const api = {
         async list(): Promise<PaginatedResponse<EarlyAccessFeatureType>> {
             return await new ApiRequest().earlyAccessFeatures().get()
         },
+    },
+
+    forms: {
+        async list(): Promise<PaginatedResponse<Form>> {
+            return await new ApiRequest().forms().get()
+        }
     },
 
     surveys: {

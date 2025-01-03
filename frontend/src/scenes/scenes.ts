@@ -238,6 +238,12 @@ export const sceneConfigurations: Record<Scene, SceneConfig> = {
         defaultDocsPath: '/docs/surveys',
         activityScope: ActivityScope.SURVEY,
     },
+    [Scene.Forms]: {
+        projectBased: true,
+        name: 'Waitlists',
+        defaultDocsPath: '/docs/forms',
+        activityScope: ActivityScope.FORM,
+    },
     [Scene.Survey]: {
         projectBased: true,
         name: 'Survey',
@@ -580,6 +586,7 @@ export const routes: Record<string, Scene> = {
     [urls.errorTracking()]: Scene.ErrorTracking,
     [urls.errorTrackingConfiguration()]: Scene.ErrorTrackingConfiguration,
     [urls.errorTrackingIssue(':id')]: Scene.ErrorTrackingIssue,
+    [urls.forms()]: Scene.Forms,
     [urls.surveys()]: Scene.Surveys,
     [urls.survey(':id')]: Scene.Survey,
     [urls.surveyTemplates()]: Scene.SurveyTemplates,

@@ -169,6 +169,7 @@ export const urls = {
     errorTrackingConfiguration: (): string => '/error_tracking/configuration',
     errorTrackingIssue: (id: string): string => `/error_tracking/${id}`,
     surveys: (tab?: SurveysTabs): string => `/surveys${tab ? `?tab=${tab}` : ''}`,
+    forms: (): string => '/forms',
     /** @param id A UUID or 'new'. ':id' for routing. */
     survey: (id: string): string => `/surveys/${id}`,
     surveyTemplates: (): string => '/survey_templates',

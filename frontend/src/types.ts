@@ -2734,6 +2734,11 @@ export interface SetInsightOptions {
     fromPersistentApi?: boolean
 }
 
+export interface Form {
+    id: string /** UUID */
+    name: string
+}
+
 export interface Survey {
     /** UUID */
     id: string
@@ -4011,6 +4016,7 @@ export enum ActivityScope {
     REPLAY = 'Replay',
     EXPERIMENT = 'Experiment',
     SURVEY = 'Survey',
+    FORM = 'Form',
     EARLY_ACCESS_FEATURE = 'EarlyAccessFeature',
     COMMENT = 'Comment',
     COHORT = 'Cohort',
