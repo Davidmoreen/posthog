@@ -56,6 +56,7 @@ from . import (
     search,
     sharing,
     survey,
+    form,
     tagged_item,
     team,
     uploaded_media,
@@ -171,6 +172,7 @@ project_features_router = projects_router.register(
     ["project_id"],
 )
 projects_router.register(r"surveys", survey.SurveyViewSet, "project_surveys", ["project_id"])
+projects_router.register(r"forms", form.FormViewSet, "project_forms", ["project_id"])
 
 projects_router.register(
     r"dashboard_templates",
