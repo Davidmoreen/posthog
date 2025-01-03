@@ -17,4 +17,4 @@ class Form(UUIDModel):
     team = models.ForeignKey("Team", on_delete=models.CASCADE)
     fields = models.JSONField(default=[]) # and array of object property names
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, blank=True, null=True)
